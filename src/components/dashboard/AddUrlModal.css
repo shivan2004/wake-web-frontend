@@ -1,0 +1,77 @@
+.add-url-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-error {
+  background-color: #FEF2F2;
+  color: var(--color-error);
+  padding: 12px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+}
+
+.form-error svg {
+  min-width: 16px;
+  margin-top: 2px;
+}
+
+.form-info {
+  background-color: #EFF6FF;
+  color: var(--color-primary);
+  padding: 12px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+}
+
+.form-info svg {
+  min-width: 16px;
+  margin-top: 2px;
+}
+
+.form-info p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.form-input {
+  padding: 10px 12px;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.form-input::placeholder {
+  color: #9CA3AF;
+}
+
+.form-input:disabled {
+  background-color: #F9FAFB;
+  cursor: not-allowed;
+}

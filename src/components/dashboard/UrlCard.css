@@ -1,0 +1,195 @@
+.url-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.url-card:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.url-card.expanded {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.url-card-header {
+  padding: 20px;
+  border-bottom: 1px solid #F3F4F6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.url-info {
+  overflow: hidden;
+}
+
+.url-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+  color: var(--color-text);
+}
+
+.url-address {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 250px;
+}
+
+.url-status {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-text {
+  color: var(--color-text);
+}
+
+.url-card-content {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F9FAFB;
+}
+
+.last-ping {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+
+.url-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 4px;
+  color: var(--color-text-light);
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background-color: #F3F4F6;
+  color: var(--color-text);
+}
+
+.pause-btn:hover {
+  color: var(--color-warning);
+}
+
+.retry-btn:hover {
+  color: var(--color-success);
+}
+
+.delete-btn:hover {
+  color: var(--color-error);
+}
+
+.delete-btn.confirm-delete {
+  color: white;
+  background-color: var(--color-error);
+  animation: pulse 1s infinite;
+}
+
+.url-details {
+  padding: 20px;
+  border-top: 1px solid #F3F4F6;
+  animation: slideDown 0.3s ease-out;
+}
+
+.url-details h4 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: var(--color-text);
+}
+
+.ping-logs {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.ping-log {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #F3F4F6;
+  font-size: 0.875rem;
+}
+
+.ping-log:last-child {
+  border-bottom: none;
+}
+
+.ping-status {
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.ping-status.ok {
+  background-color: #ECFDF5;
+  color: var(--color-success);
+}
+
+.ping-status.error {
+  background-color: #FEF2F2;
+  color: var(--color-error);
+}
+
+.ping-time {
+  color: var(--color-text-light);
+}
+
+.no-logs {
+  color: var(--color-text-light);
+  font-style: italic;
+  text-align: center;
+  padding: 20px 0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .url-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .url-status {
+    margin-top: 10px;
+  }
+  
+  .url-address {
+    max-width: 100%;
+  }
+}
