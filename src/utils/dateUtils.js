@@ -1,6 +1,8 @@
 export const formatRelativeTime = (utcTimestamp) => {
+  // Ensure the timestamp is treated as UTC
+  const timestamp = new Date(utcTimestamp.endsWith('Z') ? utcTimestamp : `${utcTimestamp}Z`);
   const now = new Date();
-  const timestamp = new Date(utcTimestamp);
+
   const diffInSeconds = Math.floor((now - timestamp) / 1000);
 
   if (diffInSeconds < 60) {
@@ -32,7 +34,9 @@ export const formatRelativeTime = (utcTimestamp) => {
 };
 
 export const formatLocalTime = (utcTimestamp) => {
-  return new Date(utcTimestamp).toLocaleString(undefined, {
+  // Force UTC interpretation by appending "Z" if not already there
+  const safeTimestamp = utcTimestamp.endsWith('Z') ? utcTimestamp : `${utcTimestamp}Z`;
+  return new Date(safeTimestamp).toLocaleString(undefined, {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
@@ -40,6 +44,6 @@ export const formatLocalTime = (utcTimestamp) => {
     minute: '2-digit',
     second: '2-digit',
     hour12: true,
-    timeZoneName: 'short'
+    timeZoneName: 'short',
   });
 };
