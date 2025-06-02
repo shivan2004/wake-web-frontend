@@ -44,6 +44,23 @@
   max-width: 250px;
 }
 
+.url-address.clickable {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+}
+
+.url-address.clickable:hover {
+  color: var(--color-primary-dark);
+}
+
+.external-link-icon {
+  opacity: 0.7;
+}
+
 .url-status {
   display: flex;
   align-items: center;
@@ -184,11 +201,11 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .url-status {
     margin-top: 10px;
   }
-  
+
   .url-address {
     max-width: 100%;
   }

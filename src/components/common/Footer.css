@@ -11,6 +11,12 @@
   gap: 40px;
 }
 
+.server-icon {
+  color: var(--color-primary);
+  opacity: 0.8;
+}
+
+
 .footer-content {
   max-width: 320px;
 }

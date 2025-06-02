@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlertCircle, Github as GitHub, Mail, Heart } from 'lucide-react';
+import {AlertCircle, Github as GitHub, Mail, Heart, Server} from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container footer-container">
         <div className="footer-content">
           <div className="footer-logo">
-            <AlertCircle className="logo-icon" />
+            <Server className="nav-logo" />
             <span>WakeWeb</span>
           </div>
           <p className="footer-tagline">Keeping your servers awake, so you can sleep.</p>

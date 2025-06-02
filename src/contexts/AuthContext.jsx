@@ -14,7 +14,6 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check URL parameters for OAuth redirect
     const url = new URL(window.location.href);
     const token = url.searchParams.get('token');
 
@@ -32,6 +31,24 @@ export const AuthProvider = ({ children }) => {
       } catch (error) {
         console.error('Invalid token:', error);
         logout();
+      }
+    } else {
+      const storedToken = localStorage.getItem('token');
+      if (storedToken) {
+        try {
+          const decodedToken = jwtDecode(storedToken);
+          const currentTime = Date.now() / 1000;
+
+          if (decodedToken.exp > currentTime) {
+            setCurrentUser(decodedToken);
+            api.setAuthToken(storedToken);
+          } else {
+            logout();
+          }
+        } catch (error) {
+          console.error('Invalid stored token:', error);
+          logout();
+        }
       }
     }
     setLoading(false);
