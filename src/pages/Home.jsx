@@ -109,11 +109,11 @@ const Home = () => {
             <h2 className="section-title">See WakeWeb in Action</h2>
             <div className="screenshots-grid">
               <div className="screenshot-card">
-                <img src="public/Img1.png" alt="Dashboard Screenshot" className="screenshot-img" />
+                <img src="public/Img1.png" className="screenshot-img" />
                 <p className="screenshot-caption">Intuitive Dashboard</p>
               </div>
               <div className="screenshot-card">
-                <img src="public/Img2.png" alt="Monitoring Screenshot" className="screenshot-img" />
+                <img src="public/Img2.png" className="screenshot-img" />
                 <p className="screenshot-caption">Real-time Monitoring</p>
               </div>
             </div>
