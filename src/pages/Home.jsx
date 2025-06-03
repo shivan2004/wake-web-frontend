@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Zap, Shield, RefreshCw, Server, ExternalLink } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import './Home.css';
+const url1 = import.meta.env.VITE_SS_URL1
+const url2 = import.meta.env.VITE_SS_URL2
 
 const Home = () => {
   const { isAuthenticated } = useAuth();
@@ -109,11 +111,11 @@ const Home = () => {
             <h2 className="section-title">See WakeWeb in Action</h2>
             <div className="screenshots-grid">
               <div className="screenshot-card">
-                <img src="https://raw.githubusercontent.com/shivan2004/wake-web-frontend/refs/heads/master/public/Img1.png" alt="Dashboard Screenshot" className="screenshot-img" />
+                <img src={url1} alt="Dashboard Screenshot" className="screenshot-img" />
                 <p className="screenshot-caption">Intuitive Dashboard</p>
               </div>
               <div className="screenshot-card">
-                <img src="https://raw.githubusercontent.com/shivan2004/wake-web-frontend/refs/heads/master/public/Img2.png" alt="Monitoring Screenshot" className="screenshot-img" />
+                <img src={url2} alt="Monitoring Screenshot" className="screenshot-img" />
                 <p className="screenshot-caption">Real-time Monitoring</p>
               </div>
             </div>

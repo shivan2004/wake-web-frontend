@@ -37,55 +37,55 @@ const UrlCard = ({ url, onDelete, onPause, onRetry }) => {
               {url.url}
               <ExternalLink size={14} className="external-link-icon" />
             </p>
-          </div>
-          <div className="url-status">
-            <span className={`status-indicator ${statusClass}`}></span>
-            <span className="status-text">{statusText}</span>
-          </div>
-        </div>
-
-        <div className="url-card-content">
-          <div className="last-ping">
-            <Clock size={16} />
-            <span>
-            {latestPing
-                ? `Last ping: ${formatRelativeTime(latestPing.timeStamp)}`
-                : 'No pings recorded yet'}
-          </span>
+            <div className="last-ping">
+              <Clock size={16} />
+              <span>
+              {latestPing
+                  ? `Last ping: ${formatRelativeTime(latestPing.timeStamp)}`
+                  : 'No pings recorded yet'}
+            </span>
+            </div>
           </div>
 
-          <div className="url-actions">
-            {isActive ? (
-                <button
-                    className="action-btn pause-btn"
-                    onClick={() => onPause(url.id)}
-                    title="Pause monitoring"
-                >
-                  <PauseCircle size={20} />
-                </button>
-            ) : (
-                <button
-                    className="action-btn retry-btn"
-                    onClick={() => onRetry(url.id)}
-                    title="Resume monitoring"
-                >
-                  <PlayCircle size={20} />
-                </button>
-            )}
-            <button
-                className={`action-btn delete-btn ${confirmDelete ? 'confirm-delete' : ''}`}
-                onClick={handleDelete}
-                title={confirmDelete ? 'Click again to confirm' : 'Delete URL'}
-            >
-              <Trash2 size={20} />
-            </button>
-            <button
-                className="action-btn expand-btn"
-                onClick={() => setExpanded(!expanded)}
-                title={expanded ? 'Collapse details' : 'Expand details'}
-            >
-              {expanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-            </button>
+          <div className="url-right">
+            <div className="url-status">
+              <span className={`status-indicator ${statusClass}`}></span>
+              <span className="status-text">{statusText}</span>
+            </div>
+
+            <div className="url-actions">
+              {isActive ? (
+                  <button
+                      className="action-btn pause-btn"
+                      onClick={() => onPause(url.id)}
+                      title="Pause monitoring"
+                  >
+                    <PauseCircle size={20} />
+                  </button>
+              ) : (
+                  <button
+                      className="action-btn retry-btn"
+                      onClick={() => onRetry(url.id)}
+                      title="Resume monitoring"
+                  >
+                    <PlayCircle size={20} />
+                  </button>
+              )}
+              <button
+                  className={`action-btn delete-btn ${confirmDelete ? 'confirm-delete' : ''}`}
+                  onClick={handleDelete}
+                  title={confirmDelete ? 'Click again to confirm' : 'Delete URL'}
+              >
+                <Trash2 size={20} />
+              </button>
+              <button
+                  className="action-btn expand-btn"
+                  onClick={() => setExpanded(!expanded)}
+                  title={expanded ? 'Collapse details' : 'Expand details'}
+              >
+                {expanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+              </button>
+            </div>
           </div>
         </div>
 

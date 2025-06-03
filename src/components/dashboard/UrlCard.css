@@ -4,11 +4,12 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 16px;
 }
 
 .url-card:hover {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
 }
 
 .url-card.expanded {
@@ -24,24 +25,24 @@
 }
 
 .url-info {
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .url-title {
   font-size: 1.25rem;
   font-weight: 600;
-  margin: 0 0 5px 0;
   color: var(--color-text);
 }
 
 .url-address {
   font-size: 0.875rem;
   color: var(--color-text-light);
-  margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 250px;
+  max-width: 500px;
 }
 
 .url-address.clickable {
@@ -61,31 +62,22 @@
   opacity: 0.7;
 }
 
+.url-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .url-status {
   display: flex;
   align-items: center;
+  gap: 8px;
   font-size: 0.875rem;
   font-weight: 500;
 }
 
 .status-text {
   color: var(--color-text);
-}
-
-.url-card-content {
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #F9FAFB;
-}
-
-.last-ping {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--color-text-light);
-  font-size: 0.875rem;
 }
 
 .url-actions {
@@ -127,6 +119,15 @@
   color: white;
   background-color: var(--color-error);
   animation: pulse 1s infinite;
+}
+
+.last-ping {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  margin-top: 8px;
 }
 
 .url-details {
@@ -200,10 +201,12 @@
   .url-card-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 16px;
   }
 
-  .url-status {
-    margin-top: 10px;
+  .url-right {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .url-address {

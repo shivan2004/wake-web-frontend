@@ -71,6 +71,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem('token');
+    sessionStorage.clear(); // Clear any session data
     setCurrentUser(null);
     api.removeAuthToken();
     navigate('/');
