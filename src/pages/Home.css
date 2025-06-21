@@ -62,7 +62,6 @@
   border: none;
   cursor: pointer;
 }
-
 .nav-button:hover {
   background-color: var(--color-primary-dark);
 }
@@ -249,9 +248,11 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.auth-form-title {
+
+h2.auth-form-title {
   text-align: center;
-  color: var(--color-text);
+  /*color: var(--color-text);*/
+  color: #000000;
   margin-bottom: 24px;
   font-size: 1.5rem;
 }

@@ -130,7 +130,7 @@ const Home = () => {
               {!isAuthenticated && (
                   <div className="auth-form-container">
                     <div className="auth-form">
-                      <h2 className="auth-form-title text-black">Login to Your Account</h2>
+                      <h2 className="auth-form-title">Login to Your Account</h2>
                       <div className="oauth-buttons">
                         <a href={`${API_URL}/oauth2/authorization/google`} className="auth-submit-button google-btn">
                           Continue with Google
